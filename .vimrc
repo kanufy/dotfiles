@@ -21,8 +21,8 @@ NeoBundle 'Townk/vim-autoclose'
 
 "お手軽コメントアウト"
 NeoBundle "tyru/caw.vim.git"
-nmap <Leader>c <Plug>(caw:i:toggle)
-vmap <Leader>c <Plug>(caw:i:toggle)
+nmap <C-K> <Plug>(caw:i:toggle)
+vmap <C-K> <Plug>(caw:i:toggle)
 
 
 call neobundle#end()
