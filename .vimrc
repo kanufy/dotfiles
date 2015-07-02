@@ -19,6 +19,10 @@ NeoBundle 'scrooloose/nerdtree'
 "Autoclose
 NeoBundle 'Townk/vim-autoclose'
 
+"お手軽コメントアウト"
+NeoBundle "tyru/caw.vim.git"
+nmap <Leader>c <Plug>(caw:i:toggle)
+vmap <Leader>c <Plug>(caw:i:toggle)
 
 
 call neobundle#end()
@@ -47,4 +51,6 @@ inoremap <C-c> <esc>
 vnoremap <silent> <C-p> "0p<CR>
 nnoremap <Space>. :<C-u>tabedit $MYVIMRC<CR>
 set autoindent
+set clipboard+=unnamed
 au BufNewFile,BufRead *twig set filetype=html
+set backspace=indent,eol,start
