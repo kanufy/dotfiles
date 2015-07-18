@@ -10,20 +10,26 @@ call neobundle#begin(expand('~/.vim/bundle/'))
 
 " neobundle自体をneobundleで管理
 NeoBundleFetch 'Shougo/neobundle.vim'
-
-" 今後このあたりに追加のプラグインをどんどん書いて行きます！！"
-
 "NERDTree
 NeoBundle 'scrooloose/nerdtree'
-
 "Autoclose
 NeoBundle 'Townk/vim-autoclose'
-
-"お手軽コメントアウト"
-NeoBundle "tyru/caw.vim.git"
+"お手軽コメントアウト
+NeoBundle 'tyru/caw.vim.git'
 nmap <C-K> <Plug>(caw:i:toggle)
 vmap <C-K> <Plug>(caw:i:toggle)
-
+"補完
+NeoBundle 'Shougo/neocomplete.vim'
+let g:neocomplete#enable_at_startup = 1
+"js-indent
+NeoBundle 'vim-scripts/JavaScript-Indent'
+let g:SimpleJsIndenter_BriefMode = 1
+let g:SimpleJsIndenter_CaseIndentLevel = -1 
+"twig syntax
+NeoBundle 'evidens/vim-twig'
+"multi-cursors
+NeoBundle 'terryma/vim-multiple-cursors'
+let g:multi_cursor_use_default_mapping=0
 
 call neobundle#end()
 
