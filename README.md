@@ -22,3 +22,7 @@ $ git clone git@github.com:kanu1102/dotfiles.git
 $ ln -s dotfiles/.vimrc .vimrc
 $ ln -s dotfiles/.zshrc .zshrc
 ```
+
+
+このへんいちいちめんどくさいので
+全部まとめてインストールできるようにしよう...今後。笑
