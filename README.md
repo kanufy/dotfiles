@@ -23,6 +23,6 @@ $ ln -s dotfiles/.vimrc .vimrc
 $ ln -s dotfiles/.zshrc .zshrc
 ```
 
-
-このへんいちいちめんどくさいので
+  
+このへんいちいちめんどくさいので  
 全部まとめてインストールできるようにしよう...今後。笑
