@@ -1,5 +1,5 @@
 # dotfiles
-くそみたいな設定たち。
+settings like a sh*t! lol
 * .vimrc
 * .zshrc
 
