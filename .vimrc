@@ -48,8 +48,11 @@ autocmd Vimenter * NERDTree ./
 set number
 set smartindent
 set expandtab
+set shiftwidth=2
 set tabstop=2
 set softtabstop=2
+set ignorecase
+set laststatus=2
 set hlsearch   " 検索文字列をハイライトする "
 set mouse=a
 syntax on
