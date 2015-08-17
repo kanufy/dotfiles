@@ -1,3 +1,6 @@
+"---------------------------
+"  .vimrc settings by kanae
+"---------------------------
 
 "---------------------------
 "start Neobundle Settings.
@@ -30,6 +33,9 @@ NeoBundle 'evidens/vim-twig'
 "multi-cursors
 NeoBundle 'terryma/vim-multiple-cursors'
 let g:multi_cursor_use_default_mapping=0
+"color
+NeoBundle 'kanu1102/vim-hybrid'
+
 
 call neobundle#end()
 
@@ -43,23 +49,36 @@ NeoBundleCheck
 "-------------------------
 " End Neobundle Settings.
 "-------------------------
-set cursorline
+
+" Common -----------------
+colorscheme hybrid
 autocmd Vimenter * NERDTree ./
-set number
+" Indent -----------------
 set smartindent
-set expandtab
 set shiftwidth=2
 set tabstop=2
 set softtabstop=2
-set ignorecase
+set autoindent
+" StatusLine -------------
 set laststatus=2
-set hlsearch   " 検索文字列をハイライトする "
-set mouse=a
+" File -------------------
+set autoread
 syntax on
+au BufNewFile,BufRead *twig set filetype=html
+" Assist imputting -------
+set backspace=indent,eol,start
+" Search -----------------
+set hlsearch   " 検索文字列をハイライトする 
+" View -------------------
+set cursorline
+set number
+set expandtab
+set ignorecase
+
+"-------------------------
+" my config
+"-------------------------
 inoremap <C-c> <esc>
 vnoremap <silent> <C-p> "0p<CR>
 nnoremap <Space>. :<C-u>tabedit $MYVIMRC<CR>
-set autoindent
 set clipboard+=unnamed
-au BufNewFile,BufRead *twig set filetype=html
-set backspace=indent,eol,start
