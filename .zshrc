@@ -175,7 +175,7 @@ alias Ha='say "Good Girl KaNaA"; '
 alias -g G='| grep'
 alias -g L='| less'
 alias Miura='say "Mi Ura San, E De Su Ka?"'
-
+alias relogin='exec $SHELL -l'
 
 ### Clip Board ###
 #ターミナル上でコピーしたいときのやつ
