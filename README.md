@@ -6,7 +6,7 @@ settings like a sh*t! lol
 ## Install 
 ```
 $ cd ~/
-$ git clone git@github.com:kanu1102/dotfiles.git
+$ git clone git@github.com:kanufy/dotfiles.git
 $ cd dotfiles/
 $ make install
 ```
