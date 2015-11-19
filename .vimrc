@@ -34,7 +34,7 @@ NeoBundle 'evidens/vim-twig'
 NeoBundle 'terryma/vim-multiple-cursors'
 let g:multi_cursor_use_default_mapping=0
 "color
-NeoBundle 'kanu1102/vim-hybrid'
+NeoBundle 'kanufy/vim-hybrid'
 
 
 call neobundle#end()
