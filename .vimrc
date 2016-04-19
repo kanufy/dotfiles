@@ -1,4 +1,4 @@
-"---------------------------
+"--------------------------
 "  .vimrc settings by kanae
 "---------------------------
 
@@ -82,3 +82,7 @@ inoremap <C-c> <esc>
 vnoremap <silent> <C-p> "0p<CR>
 nnoremap <Space>. :<C-u>tabedit $MYVIMRC<CR>
 set clipboard+=unnamed
+
+" for US Keyboard ----------
+nnoremap ; :
+nnoremap : ;

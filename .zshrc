@@ -3,6 +3,8 @@
 # ------------------------------
 echo --- Welcome KANAE ---
 
+export PATH=/usr/local/bin:/usr/bin:$PATH #最初にもってこないといろいろ不具合あったつらい
+
 export EDITOR=vim        # エディタをvimに設定
 export LANG=ja_JP.UTF-8  # 文字コードをUTF-8に設定
 export KCODE=u           # KCODEにUTF-8を設定
@@ -19,8 +21,6 @@ setopt magic_equal_subst # =以降も補完する(--prefix=/usrなど)
 setopt prompt_subst      # プロンプト定義内で変数置換やコマンド置換を扱う
 setopt notify            # バックグラウンドジョブの状態変化を即時報告する
 setopt equals            # =commandを`which command`と同じ処理にする
-
-
 
 ### Complement ###
 autoload -U compinit; compinit # 補完機能を有効にする
@@ -88,8 +88,7 @@ zstyle ':completion:*:default' list-colors ${(s.:.)LS_COLORS}
 ### Weather ###
 #kyoto = 260010
 #tokyo = 130010
-#shiga = 250010
-WEATHER=$(curl -s http://weather.livedoor.com/forecast/webservice/json/v1\?city\=260010 | jq -r '.forecasts[] | select(.dateLabel == "今日").telop' );
+WEATHER=$(curl -s http://weather.livedoor.com/forecast/webservice/json/v1\?city\=130010 | jq -r '.forecasts[] | select(.dateLabel == "今日").telop' );
 case $WEATHER in
   曇時々晴) WE="☁ /☀";;
   曇時々雨) WE="☁ /☂";;
@@ -143,29 +142,11 @@ SPROMPT=$tmp_sprompt  # スペル訂正用プロンプト
   PROMPT="%{${fg[white]}%}${HOST%%.*} ${PROMPT}"
 ;
 
-### Title (user@hostname:current) ###
-case "${TERM}" in
-kterm*|xterm*|)
-  precmd() {
-    echo -ne "\033]0;${USER}@${HOST%%.*}:${PWD}\007"
-  }
-  ;;
-esac
-
-
 # ------------------------------
 # Other Settings
 # ------------------------------
 ### RVM ###
 if [[ -s ~/.rvm/scripts/rvm ]] ; then source ~/.rvm/scripts/rvm ; fi
-
-### Macports ###
-#case "${OSTYPE}" in
-#  darwin*)
-#    export PATH=/opt/local/bin:/opt/local/sbin:$PATH
-#    export MANPATH=/opt/local/share/man:/opt/local/man:$MANPATH
-#  ;;
-#esac
 
 ### Aliases ###
 #alias r=rails
@@ -179,7 +160,7 @@ alias relogin='exec $SHELL -l'
 
 ### Clip Board ###
 #ターミナル上でコピーしたいときのやつ
-#たとえば less index.html C　とするとindex.htmlの内容がクリップボードにコピーされる
+#たとえば less index.html Cとするとindex.htmlの内容がクリップボードにコピーされる
 if which pbcopy >/dev/null 2>&1 ; then 
 # Mac  
 alias -g C='| pbcopy'
@@ -190,42 +171,6 @@ elif which putclip >/dev/null 2>&1 ; then
 # Cygwin 
 alias -g C='| putclip'
 fi
-
-
-
-
-### Weather ###
-#JIKAN=$((`date '+%H'` % 2))
-#echo $JIKAN
-#TIME=`date '+%M'`
-#echo ${TIME}
-#if [ ${JIKAN} -eq 1 ] && [ ${TIME} -eq 36 ] ;
-#then echo
-#WEATHER=$(curl -s http://weather.livedoor.com/forecast/webservice/json/v1\?city\=260010 | jq -r '.forecasts[] | select(.dateLabel == "今日").telop' );
-#fi
-#echo $WEATHER
-#case $WEATHER in
-#  曇時々晴) echo "☁ /☀";;
-#  曇時々雨) echo "☁ /☂";;
-#  曇時々雪) echo "☁ /☃";;
-#  晴時々曇) echo "☀ /☁";;
-#  晴時々雨) echo "☀ /☂";;
-#  雨時々曇) echo "☂ /☁";;
-#  晴のち曇) echo "☀ ->☁";;
-#  晴のち雨) echo "☀ ->☂";;
-#  曇のち晴) echo "☁ ->☀";;
-#  曇のち雨) echo "☁ ->☂";;
-#  雨のち晴) echo "☂ ->☀";;
-#  雨のち曇) echo "☂ ->☁";;
-#  雪のち曇) echo "☃ ->☁";;
-#  雨) echo "☂";;
-#  晴れ) echo "☀";;
-#  曇り) echo "☁";;
-#  雪) echo "☃";;
-#  *) echo "♡";;
-#esac
-
-
 
 
 # cdコマンド実行後、lsを実行する
