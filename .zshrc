@@ -10,8 +10,7 @@ export LANG=ja_JP.UTF-8  # 文字コードをUTF-8に設定
 export KCODE=u           # KCODEにUTF-8を設定
 export AUTOFEATURE=true  # autotestでfeatureを動かす
 
-#bindkey -e               # キーバインドをemacsモードに設定
-bindkey -v              # キーバインドをviモードに設定
+bindkey -v               # キーバインドをviモードに設定
 
 setopt no_beep           # ビープ音を鳴らさないようにする
 setopt auto_cd           # ディレクトリ名の入力のみで移動する 
@@ -114,13 +113,16 @@ esac
 ### Prompt ###
 # プロンプトに色を付ける
 autoload -U colors; colors
+autoload -Uz add-zsh-hook
 # vcs_infoロード    
 autoload -Uz vcs_info 
 # gitのみ有効にする
 zstyle ":vcs_info:*" enable git
+zstyle ":vcs_info:*" formats "%{${fg[yellow]}%}(^ω^)<%{${reset_color}%}%{${fg[green]}%}%b%{${reset_color}%}%{${fg[yellow]}%})%{${reset_color}%}
+"  
 
 # 一般ユーザ時(host% >)
-tmp_prompt="%{${fg[cyan]}%}%n%{${reset_color}%} %{${fg[red]}%}${WE}%{${reset_color}%} %{${fg[magenta]}%}>%{${reset_color}%}"
+tmp_prompt="%{${fg[cyan]}%}%n%{${reset_color}%} %{${fg[red]}%}${WE}%{${reset_color}%} %{${fg[cyan]}%}%B>%b%{${reset_color}%}"
 tmp_prompt2="%{${fg[cyan]}%}%_> %{${rtmeset_color}%}"
 tmp_rprompt="%{${fg[green]}%}[%~]%{${reset_color}%}"
 tmp_sprompt="%{${fg[yellow]}%}%r is correct? [Yes, No, Abort, Edit]:%{${reset_color}%}"
@@ -132,15 +134,19 @@ if [ ${UID} -eq 0 ]; then
   tmp_rprompt="%B%U${tmp_rprompt}%u%b"
   tmp_sprompt="%B%U${tmp_sprompt}%u%b"
 fi
+function _update_vcs_info_msg() {
+    LANG=en_US.UTF-8 vcs_info
+    PROMPT="${vcs_info_msg_0_}${tmp_prompt}"
+}
+add-zsh-hook precmd _update_vcs_info_msg
 
-PROMPT=$tmp_prompt    # 通常のプロンプト
+#PROMPT=${vcs_info_msg_0_}$tmp_prompt    # 通常のプロンプト
 PROMPT2=$tmp_prompt2  # セカンダリのプロンプト(コマンドが2行以上の時に表示される)
 RPROMPT=$tmp_rprompt  # 右側のプロンプト
 SPROMPT=$tmp_sprompt  # スペル訂正用プロンプト
 # SSHログイン時のプロンプト
 [ -n "${REMOTEHOST}${SSH_CONNECTION}" ] &&
   PROMPT="%{${fg[white]}%}${HOST%%.*} ${PROMPT}"
-;
 
 # ------------------------------
 # Other Settings
@@ -180,6 +186,7 @@ fi
 export PATH=/usr/local/php5/bin:$PATH
 export PATH=/usr/local/bin:$PATH
 export PATH=/usr/local/share/python:$PATH
+export PATH=/sbin:$PATH
 
 #pathの重複を避ける
 typeset -U path cdpath fpath manpath
