@@ -1,0 +1,30 @@
+[[plugins]]
+repo = 'Shougo/dein.vim'
+
+[[plugins]] #NERDTree
+repo = 'scrooloose/nerdtree'
+
+[[plugins]] #autoclose
+repo = 'Townk/vim-autoclose'
+
+[[plugins]] #お手軽コメントアウト
+repo = 'tyru/caw.vim.git'
+
+[[plugins]]
+repo = 'Shougo/neocomplete.vim'
+#let g:neocomplete#enable_at_startup = 1
+
+[[plugins]] 
+repo = 'vim-scripts/JavaScript-Indent'
+#let g:SimpleJsIndenter_BriefMode = 1
+#let g:SimpleJsIndenter_CaseIndentLevel = -1 
+
+[[plugins]] #twig syntax
+repo = 'evidens/vim-twig'
+
+[[plugins]]
+repo = 'terryma/vim-multiple-cursors'
+#let g:multi_cursor_use_default_mapping=0
+
+[[plugins]] #colors
+repo = 'kanufy/vim-hybrid'
