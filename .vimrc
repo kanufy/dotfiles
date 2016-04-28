@@ -59,6 +59,9 @@ let g:SimpleJsIndenter_BriefMode = 1
 let g:SimpleJsIndenter_CaseIndentLevel = -1 
 " for terryma/vim-multiple-cursors 
 let g:multi_cursor_use_default_mapping=0
+" for scrooloose/syntastic
+let g:syntastic_python_checkers = ["flake8"]
+let g:syntastic_python_flake8_args="--max-line-length=100"
 
 "-------------------------
 " End Neobundle Settings.
