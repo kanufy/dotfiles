@@ -28,3 +28,6 @@ repo = 'terryma/vim-multiple-cursors'
 
 [[plugins]] #colors
 repo = 'kanufy/vim-hybrid'
+
+[[plugins]] #syntax
+repo = 'scrooloose/syntastic'
