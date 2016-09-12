@@ -161,8 +161,8 @@ alias la='ls -la'
 alias Ha='say "Good Girl KaNaA"; '
 alias -g G='| grep'
 alias -g L='| less'
-alias Miura='say "Mi Ura San, E De Su Ka?"'
 alias relogin='exec $SHELL -l'
+alias Sen='say "Sen chan, cho to E De Su Ka?"'
 
 ### Clip Board ###
 #ターミナル上でコピーしたいときのやつ
@@ -198,3 +198,7 @@ export PYENV_ROOT="${HOME}/.pyenv"
      eval "$(pyenv init -)"
     # eval "$(pyenv virtualenv-init -)"
  fi
+
+export KAULI_HOME=/fluct/kamikaze
+source /fluct/kamikaze/python/venv/bin/activate
+alias ipython='/fluct/kamikaze/python/venv/bin/ipython'
