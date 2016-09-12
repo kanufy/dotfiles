@@ -61,7 +61,7 @@ let g:SimpleJsIndenter_CaseIndentLevel = -1
 let g:multi_cursor_use_default_mapping=0
 " for scrooloose/syntastic
 let g:syntastic_python_checkers = ["flake8"]
-let g:syntastic_python_flake8_args="--max-line-length=100"
+let g:syntastic_python_flake8_args="--max-line-length=99"
 
 "-------------------------
 " End Neobundle Settings.
@@ -72,7 +72,7 @@ colorscheme hybrid
 autocmd Vimenter * NERDTree ./
 " Indent -----------------
 set smartindent
-set shiftwidth=2
+set shiftwidth=4
 set tabstop=2
 set softtabstop=2
 set autoindent
