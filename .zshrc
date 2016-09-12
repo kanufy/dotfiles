@@ -1,7 +1,7 @@
 # ------------------------------
 # General Settings
 # ------------------------------
-echo --- Welcome KANAE ---
+echo --- Welcome Kanufy ---
 
 export PATH=/usr/local/bin:/usr/bin:$PATH #最初にもってこないといろいろ不具合あったつらい
 
@@ -196,5 +196,5 @@ export PYENV_ROOT="${HOME}/.pyenv"
  if [ -d "${PYENV_ROOT}" ]; then
      export PATH=${PYENV_ROOT}/bin:$PATH
      eval "$(pyenv init -)"
-     eval "$(pyenv virtualenv-init -)"
+    # eval "$(pyenv virtualenv-init -)"
  fi
