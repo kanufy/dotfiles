@@ -1,9 +1,12 @@
 # ------------------------------
 # General Settings
 # ------------------------------
-echo --- Welcome KANAE ---
+echo --- Welcome Kanufy ---
 
+export PATH=~/.local/bin:$PATH
 export PATH=/usr/local/bin:/usr/bin:$PATH #最初にもってこないといろいろ不具合あったつらい
+export PATH="/usr/local/opt/php@7.1/bin:$PATH"
+export PATH="/usr/local/opt/php@7.1/sbin:$PATH"
 
 export EDITOR=vim        # エディタをvimに設定
 export LANG=ja_JP.UTF-8  # 文字コードをUTF-8に設定
@@ -22,7 +25,9 @@ setopt notify            # バックグラウンドジョブの状態変化を�
 setopt equals            # =commandを`which command`と同じ処理にする
 
 ### Complement ###
-autoload -U compinit; compinit # 補完機能を有効にする
+fpath=($(brew --prefix)/share/zsh/site-functions $fpath)
+autoload -U compinit           # 補完機能を有効にする
+compinit -u
 setopt auto_list               # 補完候補を一覧で表示する(d)
 setopt auto_menu               # 補完キー連打で補完候補を順に表示する(d)
 setopt list_packed             # 補完候補をできるだけ詰めて表示する
@@ -155,14 +160,10 @@ SPROMPT=$tmp_sprompt  # スペル訂正用プロンプト
 if [[ -s ~/.rvm/scripts/rvm ]] ; then source ~/.rvm/scripts/rvm ; fi
 
 ### Aliases ###
-#alias r=rails
-alias vi=vim
 alias la='ls -la'
-alias Ha='say "Good Girl KaNaA"; '
 alias -g G='| grep'
 alias -g L='| less'
 alias relogin='exec $SHELL -l'
-alias Sen='say "Sen chan, cho to E De Su Ka?"'
 
 ### Clip Board ###
 #ターミナル上でコピーしたいときのやつ
@@ -178,27 +179,23 @@ elif which putclip >/dev/null 2>&1 ; then
 alias -g C='| putclip'
 fi
 
+# sptz開発用mysql
+alias mysptz='mysql -h 127.0.0.1 -u root -proot supporterz2014'
 
-# cdコマンド実行後、lsを実行する
-#function cd() {
-#  builtin cd $@ && ls;
-#}
+
 export PATH=/usr/local/php5/bin:$PATH
 export PATH=/usr/local/bin:$PATH
 export PATH=/usr/local/share/python:$PATH
 export PATH=/sbin:$PATH
 
 #pathの重複を避ける
-typeset -U path cdpath fpath manpath
+typeset -U path cdpath fpath manpath PATH
 
 # pyenv
 export PYENV_ROOT="${HOME}/.pyenv"
  if [ -d "${PYENV_ROOT}" ]; then
      export PATH=${PYENV_ROOT}/bin:$PATH
      eval "$(pyenv init -)"
-     eval "$(pyenv virtualenv-init -)"
+    # eval "$(pyenv virtualenv-init -)"
  fi
-
-export KAULI_HOME=/fluct/kamikaze
-source /fluct/kamikaze/python/venv/bin/activate
-alias ipython='/fluct/kamikaze/python/venv/bin/ipython'
+export PATH=$PATH:/Users/k-hata/.nodebrew/current/bin

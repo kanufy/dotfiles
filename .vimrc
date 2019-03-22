@@ -50,8 +50,8 @@ endif
 "---------------------------
 
 " for tyru/caw.vim.git お手軽コメントアウト
-nmap <C-K> <Plug>(caw:i:toggle)
-vmap <C-K> <Plug>(caw:i:toggle)
+nmap <C-K> <Plug>(caw:hatpos:toggle)
+vmap <C-K> <Plug>(caw:hatpos:toggle)
 " for Shougo/neocomplete.vim 補完
 let g:neocomplete#enable_at_startup = 1
 " for vim-scripts/JavaScript-Indent js-indent
@@ -64,7 +64,7 @@ let g:syntastic_python_checkers = ["flake8"]
 let g:syntastic_python_flake8_args="--max-line-length=99"
 
 "-------------------------
-" End Neobundle Settings.
+" End plugin Settings.
 "-------------------------
 
 " Common -----------------
