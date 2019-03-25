@@ -1,0 +1,38 @@
+{
+    "workbench.iconTheme": "vscode-icons",
+    "vim.useSystemClipboard": true,
+    "window.zoomLevel": 0,
+    "workbench.sideBar.location": "left",
+    "files.trimTrailingWhitespace": true,
+    "[markdown]": {
+        "files.trimTrailingWhitespace": false
+    },
+    "[typescript]": {
+        "editor.formatOnSave": true
+    },
+    "[typescriptreact]": {
+        "editor.formatOnSave": true
+    },
+    "prettier.stylelintIntegration": true,
+    "[less]": {
+        "editor.formatOnSave": true,
+    },
+    // PHP IntelliSense
+    "php.executablePath": "/usr/local/opt/php@7.1/bin/php",
+    //TSlint extention
+    "tslint.enable": true,
+    //ESlint extention
+    "eslint.enable": true,
+    // Controls the rendering size of tabs in characters. Accepted values: "auto", 2, 4, 6, etc. If set to "auto", the value will be guessed when a file is opened.
+    "editor.tabSize": 2,
+    // Controls if the editor will insert spaces for tabs. Accepted values:  "auto", true, false. If set to "auto", the value will be guessed when a file is opened.
+    "editor.insertSpaces": true,
+    // Controls whether the editor should rener whitespace characters
+    "editor.renderWhitespace": "boundary",
+    // "editor.codeActionsOnSave": {
+    //     "source.organizeImports": true
+    // },
+    "workbench.colorTheme": "Monokai Dimmed",
+    "breadcrumbs.enabled": true,
+    "typescript.updateImportsOnFileMove.enabled": "always",
+}

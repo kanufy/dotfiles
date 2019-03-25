@@ -2,7 +2,7 @@
 # General Settings
 # ------------------------------
 echo --- Welcome Kanufy ---
-
+export PATH=$PATH:/Users/k-hata/.nodebrew/current/bin
 export PATH=/usr/local/bin:/usr/bin:$PATH #最初にもってこないといろいろ不具合あったつらい
 
 export EDITOR=vim        # エディタをvimに設定
@@ -199,6 +199,6 @@ export PYENV_ROOT="${HOME}/.pyenv"
     # eval "$(pyenv virtualenv-init -)"
  fi
 
-export KAULI_HOME=/fluct/kamikaze
-source /fluct/kamikaze/python/venv/bin/activate
+#export KAULI_HOME=/fluct/kamikaze
+#source /fluct/kamikaze/python/venv/bin/activate
 alias ipython='/fluct/kamikaze/python/venv/bin/ipython'
