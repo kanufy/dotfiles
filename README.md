@@ -1,8 +1,4 @@
 # dotfiles
-settings like a sh*t! lol
-* .vimrc
-* .zshrc
-
 ## Install 
 ```
 $ cd ~/
