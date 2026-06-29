@@ -1,4 +1,4 @@
-install: install-brew
+install:
 	mkdir -p ${HOME}/.vim/dein
 	mkdir -p ${HOME}/.config/fish
 	rm -rf ${HOME}/.vimrc
